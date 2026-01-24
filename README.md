@@ -52,7 +52,7 @@
 **YiZhiXianYu**
 
 * Nankai University, Software Engineering
-* GitHub: [@1FREEfISH](https://www.google.com/search?q=https://github.com/1FREEfISH)
+* GitHub: [@YiZhiXianYu](https://www.google.com/search?q=https://github.com/YiZhi-XianYu)
 
 ---
 

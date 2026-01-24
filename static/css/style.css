@@ -1,0 +1,63 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+    font-family: 'Orbitron', sans-serif;
+    user-select: none;
+}
+
+canvas { display: block; }
+
+/* 游戏结束/雪花屏覆盖层 */
+#static-noise {
+    display: none;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 200;
+    background: #000;
+}
+
+/* 主菜单 */
+#overlay {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85);
+    z-index: 99;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    color: #fcee09; text-align: center; cursor: pointer;
+    backdrop-filter: blur(5px);
+}
+
+/* 暂停界面 */
+#pause-overlay {
+    display: none;
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 150;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.pause-text {
+    font-size: 80px;
+    color: #00ffff;
+    text-shadow: 4px 4px 0 #ff0055;
+    font-weight: 900;
+    letter-spacing: 10px;
+}
+
+.pause-sub {
+    font-family: 'VT323';
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    animation: blink 1s infinite;
+}
+
+h1 { text-shadow: 0 0 20px #fcee09; font-size: 60px; margin: 0; letter-spacing: 5px;}
+.blink { animation: blink 0.2s infinite; }
+@keyframes blink { 50% { opacity: 0; } }

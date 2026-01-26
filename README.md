@@ -14,7 +14,7 @@
 
 游戏设计了独特的“赛博精神病”机制和高密度的障碍物挑战，玩家不仅需要通过头部倾斜来驾驶，还需要在危机时刻闭眼“净化”异常状态，甚至通过手势击落敌机。
 
-🔗 **项目仓库**: [https://github.com/1FREEfISH/YiZhiXianYu_python_course-project](https://github.com/1FREEfISH/YiZhiXianYu_python_course-project)
+🔗 **项目仓库**: https://github.com/YiZhi-XianYu/YiZhiXianYu_python_course-project
 
 ---
 
@@ -41,7 +41,7 @@
 - **冷却时间 (CD)**：**15秒**。
 
 ### 4. 终极挑战：赛博精神病 (Cyberpsychosis)
-- **触发条件**：当屏幕上积累的 Bug 窗口达到 **10个** 时，系统强制进入“赛博精神病”状态。
+- **触发条件**：当屏幕上积累的 Bug 窗口达到 **10个** 或积分低于 **0** 时，系统强制进入“赛博精神病”状态。
 - **失败判定**：如果该状态持续超过 **15秒**，游戏直接失败 (Game Over)。
 
 ### 🏆 胜利条件 (Win Condition)

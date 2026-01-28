@@ -9,19 +9,19 @@ import math
 from flask import Flask, render_template, jsonify, send_file
 import logging
 
-# === 🔇 静音日志 (只显示重要报错) ===
+# === 静音日志 (只显示重要报错) ===
 log = logging.getLogger('werkzeug')
 log.setLevel(logging.ERROR)
 
-# === ⚙️ Flask 配置 (将模板目录设为当前目录，方便文件管理) ===
+# === Flask 配置 (将模板目录设为当前目录，方便文件管理) ===
 app = Flask(__name__, template_folder='.')
 
-# === ⚙️ 游戏 CV 配置 ===
+# === 游戏 CV 配置 ===
 FLUSH_COOLDOWN = 15.0  # 眨眼技能 CD
 FLUSH_REQUIRED_TIME = 1.0  # 闭眼需要维持的时间
 
 
-# === 🌊 滤波器 (让数值更平滑) ===
+# === 滤波器 (让数值更平滑) ===
 class SmoothFilter:
     def __init__(self, alpha=0.2):
         self.alpha = alpha
@@ -32,7 +32,7 @@ class SmoothFilter:
         return self.value
 
 
-# === 💾 全局状态 (Python -> JS 数据桥梁) ===
+# === 全局状态 (Python -> JS 数据桥梁) ===
 game_state = {
     "aim_x": 0.5, "aim_y": 0.5,  # 准星位置 (0.0 - 1.0)
     "head_tilt": 0.0,  # 头部倾斜 (-1.0 - 1.0)
@@ -49,7 +49,7 @@ filter_aim_y = SmoothFilter(0.15)
 filter_tilt = SmoothFilter(0.1)
 
 
-# === 👁️ 视觉核心逻辑 (独立线程) ===
+# === 视觉核心逻辑 (独立线程) ===
 def cv_thread_logic():
     global game_state
     last_flush_time = 0
@@ -167,7 +167,7 @@ def cv_thread_logic():
         time.sleep(0.01)
 
 
-# === 🌐 Flask 路由 ===
+# === Flask 路由 ===
 
 @app.route('/')
 def index():
@@ -239,7 +239,7 @@ def stream_menu_bgm():
     return "File not found", 404
 
 
-# === 🚀 主程序入口 ===
+# === 主程序入口 ===
 if __name__ == '__main__':
     # 1. 启动 CV 线程
     t = threading.Thread(target=cv_thread_logic)
